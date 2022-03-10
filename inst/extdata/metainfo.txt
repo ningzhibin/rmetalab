@@ -1,0 +1,10 @@
+Raw file	Experiment	meta1	meta2
+Haonan_20210302_culturetraining_KES1	KES1	KES	A
+Haonan_20210302_culturetraining_KES2	KES2	KES	A
+Haonan_20210302_culturetraining_KES3	KES3	KES	A
+Haonan_20210302_culturetraining_PBS1	PBS1	PBS	A
+Haonan_20210302_culturetraining_PBS2	PBS2	PBS	B
+Haonan_20210302_culturetraining_PBS3	PBS3	PBS	B
+Haonan_20210302_culturetraining_W1	W1	W	B
+Haonan_20210302_culturetraining_W2	W2	W	B
+Haonan_20210302_culturetraining_W3	W3	W	B

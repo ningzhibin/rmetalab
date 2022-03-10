@@ -1,0 +1,37 @@
+Package: rmetalab
+Title: tools for metaproteomics data analysis and more
+Version: 0.25
+Authors@R: 
+    person(given = "Zhibin",
+           family = "Ning",
+           role = c("aut", "cre"),
+           email = "ningzhibin@gmail.com")
+Description: A collection of functions freuqntly used by Zhibin. Most of the functions are written by Zhibin. 
+  Some are just a wrapper of functions in other package, making it easy to use for proteomics data.  
+  There are also some basic template you can use for data analysis report using Rmarkdown.
+License: GNU
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
+Depends: R (>= 3.0.0)
+Imports:
+  ggplot2,
+  rmarkdown,
+  plotly,
+  tidyverse,
+  rio,
+  visNetwork,
+  htmlwidgets,
+  lazyeval,
+  glue, 
+  Rcpp,
+  reshape2,
+  MASS,
+  magrittr,
+  RColorBrewer,
+  ggfortify,
+  rrcovNA,
+  gplots,
+  heatmaply,
+  UpSetR
+  

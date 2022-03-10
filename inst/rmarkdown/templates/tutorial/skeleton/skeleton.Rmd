@@ -1,0 +1,46 @@
+---
+title: "Tutorial"
+author: "ningzhibinn@gmail.com"
+date: "`r Sys.time()`"
+output:
+  html_document:
+    fig_width: 10
+    fig_caption: TRUE
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: TRUE
+      smooth_scroll: TRUE
+    number_sections: true
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+
+```{r setup, include=FALSE}
+# enviroment setup
+knitr::opts_chunk$set(echo = TRUE,warning = FALSE, message = FALSE, cache = TRUE)
+# if you have a large file (large dataset to process) to knit, set cache = TRUE to speed up the test process
+
+#library("devtools")
+#install_github("ningzhibin/Zhibin", auth_token = "ef2b5ff64c3ba58efccc5e79890a66ebd8a4fac3")
+#library(Zhibin)
+library(tidyverse)
+
+```
+
+# R Markdown tutorials
+
+
+```{r title}
+
+
+
+```
+
