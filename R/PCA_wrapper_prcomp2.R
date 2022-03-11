@@ -7,7 +7,7 @@
 #' @param inputation logic, if do imputation. default as FALSE,
 #' @param Q a value in [0, 1], if do filtering before analysis. default as 0.75, meaning only keep rows with more than 75% present values. Too many missing value will distart PCA analysis
 #'
-#' @return a list,including direct PCA result and plot
+#' @return a list of PCA results and plots
 #'
 #' @export
 #'

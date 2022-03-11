@@ -16,7 +16,7 @@ PCA_wrapper_prcomp2(data_matrix, data_meta, inputation = FALSE, Q = 0.75)
 \item{Q}{a value in [0, 1], if do filtering before analysis. default as 0.75, meaning only keep rows with more than 75% present values. Too many missing value will distart PCA analysis}
 }
 \value{
-a list,including direct PCA result and plot
+a list of PCA results and plots
 }
 \description{
 This wrapper uses prcomp as the method to do pca. This is preferred for omic data, with more features(lines) than samples(columns)
