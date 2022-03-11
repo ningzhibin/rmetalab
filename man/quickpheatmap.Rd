@@ -37,14 +37,5 @@ Take advantage of the multiple annotation, easier to implement. The pheatmap:phe
 heatmaply::heatmaply is used  to produce an interactive d3 heatmap when
 }
 \examples{
-test_data <- generate_test_data()
-quickpheatmap(test_data$matrix)
-quickpheatmap(test_data$matrix, interactive = TRUE)
-quickpheatmap(test_data$matrix, color = rainbow(100))
-quickpheatmap(test_data$matrix,column_cluster = FALSE)
-quickpheatmap(test_data$matrix,column_cluster = FALSE,scale = "column")
-quickpheatmap(test_data$matrix,column_cluster = FALSE,scale = "column",column_meta = test_data$meta )
-quickpheatmap(test_data$matrix,column_cluster = TRUE,scale = "row",column_meta = test_data$meta )
-quickpheatmap(test_data$matrix,column_cluster = TRUE,scale = "row",column_meta = test_data$meta,interactive = TRUE )
 
 }

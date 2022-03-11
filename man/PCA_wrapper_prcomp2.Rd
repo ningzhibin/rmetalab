@@ -11,19 +11,16 @@ PCA_wrapper_prcomp2(data_matrix, data_meta, inputation = FALSE, Q = 0.75)
 
 \item{data_meta}{a data.frame with two columns, first as experiment, second as grouping}
 
-\item{inputation}{logic, if do imputation. default as FALSE,}
+\item{inputation}{logic, if do imputation. default as FALSE}
 
-\item{Q}{a value in [0, 1], if do filtering before analysis. default as 0.75, meaning only keep rows with more than 75% present values. Too many missing value will distart PCA analysis}
+\item{Q}{a value in [0, 1], if do filtering before analysis. default as 0.75, meaning only keep rows with more than 75 present values. Too many missing value will distart PCA analysis}
 }
 \value{
-a list of PCA results and plots
+list of PCA results and plots
 }
 \description{
 This wrapper uses prcomp as the method to do pca. This is preferred for omic data, with more features(lines) than samples(columns)
 }
 \examples{
-
-test_data <- generate_test_data()
-p <- PCA_wrapper_prcomp2(data_matrix = test_data$matrix, data_meta = test_data$meta, inputation = TRUE, Q = 0.75)
 
 }

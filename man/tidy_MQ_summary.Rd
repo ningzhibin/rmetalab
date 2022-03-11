@@ -16,12 +16,6 @@ a list with 3 values, summary_all, summary_rawfiles, set_experiment
 tidy_MQ_summary to cleanup and orgnaize the summary.txt file
 }
 \examples{
-  file_path <- system.file("extdata","summary.txt", package = "metalab")
- summary_table <- read.delim(file_path, header = TRUE,check.names = FALSE, stringsAsFactors = FALSE) #
- t <- tidy_MQ_summary(summary_table)
- t$summary_all
- t$summary_rawfiles
- t$set_experiment
 
 
 }

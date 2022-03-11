@@ -21,22 +21,6 @@ This is a wrapper of ggern function in ggtern package. The wrapper makes it easi
 See the details for more information, and run the example for a sample plot to have a look at what a ternary plot look like
 }
 \examples{
-#data preparation
-
- matrix_test <- matrix(runif(2000), nrow = 20)
- rownames(matrix_test) <- paste("COG", 1:20, sep = "_")
- colnames(matrix_test) <- paste("sample", 1:100, sep = "_")
- factor_test <- sample(LETTERS[1:3], 100, replace = TRUE)
- meta_test <- data.frame(samplename = colnames(matrix_test), grouping = factor_test)
-
-#Plot in three ways
-
-t <- ternary_plot_matrix(data_matrix = matrix_test, data_meta = meta_test, three_points = c("COG_1", "COG_2", "COG_3"))
-t$ternary.plot
-t <- ternary_plot_matrix(data_matrix = matrix_test, data_meta = meta_test, three_points = "top3")
-t$ternary.plot
-t <- ternary_plot_matrix(data_matrix = matrix_test, data_meta = meta_test, three_points = c(2,4,5))
-t$ternary.plot
 
 
 }

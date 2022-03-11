@@ -8,12 +8,6 @@
 #' @export
 #'
 #' @examples
-#'   file_path <- system.file("extdata","summary.txt", package = "metalab")
-#'  summary_table <- read.delim(file_path, header = TRUE,check.names = FALSE, stringsAsFactors = FALSE) #
-#'  t <- tidy_MQ_summary(summary_table)
-#'  t$summary_all
-#'  t$summary_rawfiles
-#'  t$set_experiment
 #'
 #'
 tidy_MQ_summary <- function(df_summary.txt){
@@ -73,3 +67,10 @@ tidy_MQ_summary <- function(df_summary.txt){
   }
 
 }
+
+ #  file_path <- system.file("extdata","summary.txt", package = "metalab")
+ # summary_table <- read.delim(file_path, header = TRUE,check.names = FALSE, stringsAsFactors = FALSE) #
+ # t <- tidy_MQ_summary(summary_table)
+ # t$summary_all
+ # t$summary_rawfiles
+ # t$set_experiment

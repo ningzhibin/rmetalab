@@ -4,18 +4,16 @@
 #'
 #' @param data_matrix target data matrix for PCA analysis, a long table, with rows as features, while columns as observation/experiments
 #' @param data_meta a data.frame with two columns, first as experiment, second as grouping
-#' @param inputation logic, if do imputation. default as FALSE,
-#' @param Q a value in [0, 1], if do filtering before analysis. default as 0.75, meaning only keep rows with more than 75% present values. Too many missing value will distart PCA analysis
+#' @param inputation logic, if do imputation. default as FALSE
+#' @param Q a value in [0, 1], if do filtering before analysis. default as 0.75, meaning only keep rows with more than 75 present values. Too many missing value will distart PCA analysis
 #'
-#' @return a list of PCA results and plots
+#' @return list of PCA results and plots
 #'
 #' @export
 #'
 #' @examples
 #'
-#' test_data <- generate_test_data()
-#' p <- PCA_wrapper_prcomp2(data_matrix = test_data$matrix, data_meta = test_data$meta, inputation = TRUE, Q = 0.75)
-#'
+
 PCA_wrapper_prcomp2 <- function(data_matrix, data_meta, inputation = FALSE, Q = 0.75){
 
   suppressMessages(install.packages.auto(ggplot2))

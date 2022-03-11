@@ -20,14 +20,6 @@ combo to achieve a target lipid structure. The three chains could be the same (r
 }
 \examples{
 
-combo_target <- "51:4"
-chains_observed <- c("18:1","18:2","18:3", "17:1", "17:2" ,"16:0" ,"16:1", "15:0" ,"15:1")
-
-r <- find_lipid_combo(combo_target,chains_observed)
-
-#error run
-r <- find_lipid_combo(combo_target,"dat")
-r <- find_lipid_combo(combo_target,c("18:1", "bbb", "17:1", "17:2") ) #notworking, can run, but result is not right
 }
 \seealso{
 \code{\link{combn}}

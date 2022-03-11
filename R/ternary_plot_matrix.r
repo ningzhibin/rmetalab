@@ -13,22 +13,7 @@
 #' @seealso \code{\link{ggtern}}
 #'
 #' @examples
-#' #data preparation
-#'
-#'  matrix_test <- matrix(runif(2000), nrow = 20)
-#'  rownames(matrix_test) <- paste("COG", 1:20, sep = "_")
-#'  colnames(matrix_test) <- paste("sample", 1:100, sep = "_")
-#'  factor_test <- sample(LETTERS[1:3], 100, replace = TRUE)
-#'  meta_test <- data.frame(samplename = colnames(matrix_test), grouping = factor_test)
-#'
-#' #Plot in three ways
-#'
-#' t <- ternary_plot_matrix(data_matrix = matrix_test, data_meta = meta_test, three_points = c("COG_1", "COG_2", "COG_3"))
-#' t$ternary.plot
-#' t <- ternary_plot_matrix(data_matrix = matrix_test, data_meta = meta_test, three_points = "top3")
-#' t$ternary.plot
-#' t <- ternary_plot_matrix(data_matrix = matrix_test, data_meta = meta_test, three_points = c(2,4,5))
-#' t$ternary.plot
+
 #'
 #'
 #' @export
@@ -77,31 +62,20 @@ ternary_plot_matrix <- function(data_matrix, data_meta, three_points){
 
 
 
-
-# ternary_plot <- function(data_matrix, data_meta, three_points){
+# #data preparation
 #
-#   install.packages.auto(ggtern)
+#  matrix_test <- matrix(runif(2000), nrow = 20)
+#  rownames(matrix_test) <- paste("COG", 1:20, sep = "_")
+#  colnames(matrix_test) <- paste("sample", 1:100, sep = "_")
+#  factor_test <- sample(LETTERS[1:3], 100, replace = TRUE)
+#  meta_test <- data.frame(samplename = colnames(matrix_test), grouping = factor_test)
 #
-#   select_3 <- as.data.frame(t(data_matrix[which(rownames(data_matrix) %in% three_points),]))
-#   #select_3 <- as.data.frame(scale(select_3), scale = FALSE) # rescore
+# #Plot in three ways
 #
-#   index <- match(rownames(select_3), data_meta[,1])
-#   data_meta_Reorder <- data_meta[index,]
-#
-#   select_3[,4] <- data_meta_Reorder[,2]
-#   #select_3_hits[,5] <- data_meta_Reorder[,1]
-#
-#
-#   colnames(select_3)<-c("x","y","z", "Group")
-#   p<- ggtern(data=select_3,aes(x,y,z,color=Group)) +geom_point() +labs(x=three_points[1],y=three_points[2],z=three_points[3],title="Ternary Plot")
-#
-#
-#
-#   return(list(ternary.plot = p,
-#               matrix_selected = select_3
-#   ))
-#
-# }
-
-
+# t <- ternary_plot_matrix(data_matrix = matrix_test, data_meta = meta_test, three_points = c("COG_1", "COG_2", "COG_3"))
+# t$ternary.plot
+# t <- ternary_plot_matrix(data_matrix = matrix_test, data_meta = meta_test, three_points = "top3")
+# t$ternary.plot
+# t <- ternary_plot_matrix(data_matrix = matrix_test, data_meta = meta_test, three_points = c(2,4,5))
+# t$ternary.plot
 

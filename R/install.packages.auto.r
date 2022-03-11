@@ -15,8 +15,6 @@
 #' @seealso \code{\link{install.packages}}
 #'
 #' @examples
-#' install.packages.auto(roxygen2) # from CRAN
-#' install.packages.auto(qvalue) # from bioconductor
 
 #' @export
 

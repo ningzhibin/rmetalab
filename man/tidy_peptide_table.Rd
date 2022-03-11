@@ -17,11 +17,5 @@ Cleaning include removing contaminant, reverse hits, extract the peptide intensi
 extract the experiment design, put the peptide length, sequence, missing cleavage site into vectors ready to use
 }
 \examples{
- file_path <- system.file("extdata","peptides_1000.txt", package = "rmetalab")
- peptide_table <- rio::import(file_path, header = TRUE,check.names = TRUE, stringsAsFactors = FALSE) #
- t <- tidy_peptide_table(peptide_table)
- t$intensity_matrix
- t$experiment
- str(t)
 
 }

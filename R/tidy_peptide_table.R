@@ -10,12 +10,7 @@
 #' @return an object list, including a peptide intensity matrix, vectors of peptide_sequence,length, misscleavage, charges, etc.
 #'
 #' @examples
-#'  file_path <- system.file("extdata","peptides_1000.txt", package = "rmetalab")
-#'  peptide_table <- rio::import(file_path, header = TRUE,check.names = TRUE, stringsAsFactors = FALSE) #
-#'  t <- tidy_peptide_table(peptide_table)
-#'  t$intensity_matrix
-#'  t$experiment
-#'  str(t)
+
 #'
 #' @export
 #'
@@ -84,6 +79,14 @@ tidy_peptide_table <- function(peptide_table){
 
   ))
 }
+
+ # file_path <- system.file("extdata","peptides_1000.txt", package = "rmetalab")
+ # peptide_table <- rio::import(file_path, header = TRUE,check.names = TRUE, stringsAsFactors = FALSE) #
+ # t <- tidy_peptide_table(peptide_table)
+ # t$intensity_matrix
+ # t$experiment
+ # str(t)
+
 # change log
 # 20220222 fix the issue with converting integer64 data.frame to matrix, with simply do.call(cbind,df_intensity)
 #             somehow rio::import will turn intensity columns into integer64 data type, but as.matrix will not be able to convert it correctly

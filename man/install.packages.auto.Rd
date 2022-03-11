@@ -22,10 +22,6 @@ This function is just for quick and easy install and library usage. It does not 
 If the target pacakge has already been installed, no installation will be proceeded.
 With R version 3.5 or greater, Bioconductor packages installing start using BiocManager. Therefore this comand only woorks for biocondcutior for R 3.5 or greater
 }
-\examples{
-install.packages.auto(roxygen2) # from CRAN
-install.packages.auto(qvalue) # from bioconductor
-}
 \seealso{
 \code{\link{install.packages}}
 }
