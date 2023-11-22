@@ -1,6 +1,6 @@
 Package: rmetalab
 Title: tools for metaproteomics data analysis and more
-Version: 0.25
+Version: 0.43
 Authors@R: 
     person(given = "Zhibin",
            family = "Ning",

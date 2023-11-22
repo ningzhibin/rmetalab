@@ -30,7 +30,7 @@ quickpheatmap <- function(matrix,
                          scale = "row",
                          show_rownames  =  FALSE,
                          interactive =  FALSE,
-                         color = colorRampPalette(rev(brewer.pal(n = 7, name = "RdYlBu")))(100)){
+                         color = colorRampPalette(rev(RColorBrewer::brewer.pal(n = 7, name = "RdYlBu")))(100)){
 
 
   matrix <- as.matrix(matrix)

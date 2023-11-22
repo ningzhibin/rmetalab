@@ -40,12 +40,14 @@ generate_test_data <- function(seed = 1981){
                           TimePoint = 1:10)
 
   # Randomize the order
-  matrix <- matrix[,sample(1:ncol(matrix))]
-  meta <- meta[sample(1:nrow(meta)),]
+  #matrix <- matrix[,sample(1:ncol(matrix))]
+  meta_scrable_order <- meta[sample(1:nrow(meta)),]
   rownames(meta) <- NULL
 
   return(list(matrix =matrix,
-              meta =  meta))
+              meta =  meta,
+              meta_scrable_order = meta_scrable_order
+              ))
 
 }
 

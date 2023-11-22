@@ -53,7 +53,13 @@ tidy_peptide_table <- function(peptide_table){
 
   # remove rows without any quantification value
   df_intensity <- exp(log(df_intensity))# this is going to remove the integer64 problem
-  df_intensity <- df_intensity[-which(rowSums(df_intensity > 0) == 0),,drop = FALSE]
+
+  # remove rows with all 0, if there are no such rows, do nothing
+  if (sum(rowSums(df_intensity > 0) == 0) >0){
+    df_intensity <- df_intensity[-which(rowSums(df_intensity > 0) == 0),,drop = FALSE]
+  }
+
+
   df_intensity_Q100 <- df_intensity[which(rowSums(df_intensity > 0) == ncol(df_intensity)) , , drop = FALSE]
   df_intensity_Q50 <- df_intensity[which(rowSums(df_intensity > 0) >= ncol(df_intensity)*0.5) , , drop = FALSE]
 
@@ -88,6 +94,9 @@ tidy_peptide_table <- function(peptide_table){
  # str(t)
 
 # change log
+
+# 20231108 bug fix: if there are no rows with all zeros, there will be a bug returning a empty df_intensity mattrix, do a quick test first,if no rows of all 0, do nothing
+
 # 20220222 fix the issue with converting integer64 data.frame to matrix, with simply do.call(cbind,df_intensity)
 #             somehow rio::import will turn intensity columns into integer64 data type, but as.matrix will not be able to convert it correctly
 # 20220218 add more functions to do Q 100 filtering

@@ -31,7 +31,7 @@ plot_beta_diversity <- function(count_species, meta_table =  NULL){
                             yaxis = list(title = "PCoA 2"),
                             zaxis = list(title = "PCoA 3")))
 
-    }else if (nrow(data_matrix_t) ==3){ # 2d plot
+    }else if (nrow(dist_matrix_bray) ==3){ # 2d plot
       PCoA.bray <- cmdscale(dist_matrix_bray, k=2, eig = TRUE)$points  %>%
         as.data.frame %>%
         rownames_to_column(var = "Experiment")
@@ -70,7 +70,7 @@ plot_beta_diversity <- function(count_species, meta_table =  NULL){
 
       names(plot_list)  <- colnames(meta_table)[-1]
 
-    }else if (nrow(data_matrix_t) ==3){
+    }else if (nrow(dist_matrix_bray) ==3){
 
       PCoA.bray <- cmdscale(dist_matrix_bray, k=2, eig = TRUE)$points  %>%
         as.data.frame

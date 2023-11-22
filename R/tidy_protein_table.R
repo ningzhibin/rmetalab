@@ -30,15 +30,16 @@ tidy_protein_table <- function(protein_table){
 
   # extract the intensity column matrix
   if(any(grepl("LFQ.intensity.", colnames(protein_table)))){ # if there are LFQ intensity columns, take out the LFQ columns
-    df_intensity <- protein_table[,grep("LFQ.intensity.", colnames(protein_table))]
+    df_intensity <- protein_table[,grep("LFQ.intensity.", colnames(protein_table)), drop =  FALSE]
     colnames(df_intensity)<-gsub("LFQ.intensity.", "", colnames(df_intensity))
   }else{ # otherwise take out intensity column， even only one column
     df_intensity <-   protein_table[,grep("Intensity.", colnames(protein_table)),drop =  FALSE]
     colnames(df_intensity)<-gsub("Intensity.", "", colnames(df_intensity))
   }
 
+
   # remove rows without any quantification value
-  df_intensity <- exp(log(df_intensity))# this is going to remove the integer64 problem
+  df_intensity <- exp(log(apply(df_intensity, 2, as.numeric)))# this is going to remove the integer64 problem
 
   df_intensity <- df_intensity[-which(rowSums(df_intensity > 0) == 0),,drop = FALSE]
   df_intensity_Q100 <- df_intensity[which(rowSums(df_intensity > 0) == ncol(df_intensity)) , , drop = FALSE]
@@ -64,6 +65,7 @@ tidy_protein_table <- function(protein_table){
 
 # change log
 
+# 20231006 bug fix, when the protein table is imported by readr::read_tsv, intensity columns are most likely converted into charcter, which stops the following calculation. An extra step was applied to the data.frame  (apply(data_table,2, as.numeric)) for this conversion
 # 20220222 fix the issue with converting integer64 data.frame to matrix, with simply do.call(cbind,df_intensity)
 #             somehow rio::import will turn intensity columns into integer64 data type, but as.matrix will not be able to convert it correctly
 

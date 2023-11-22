@@ -45,7 +45,15 @@ tidy_taxon_table <- function(data_table){
   # simpson <- vegan::diversity(extract_species_binary,index = "simpson", MARGIN = 2)
   # invsimpson <- vegan::diversity(extract_species_binary,index = "invsimpson", MARGIN = 2)
 
-  index_diversity_fisher_species <- vegan::fisher.alpha(extract_species, MARGIN = 2)
+  tryCatch(
+    expr = {
+      index_diversity_fisher_species <- vegan::fisher.alpha(extract_species, MARGIN = 2)
+    },
+    error = function(e){
+      index_diversity_fisher_species <<- NULL
+    }
+  )
+
 
   alpha_diversity <- list(index_diversity_shannon = index_diversity_shannon,
                           index_diversity_simpson = index_diversity_simpson,
